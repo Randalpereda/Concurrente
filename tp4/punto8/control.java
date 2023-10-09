@@ -21,7 +21,7 @@ public class control implements Runnable{
     }
 
     @Override
-    public void run() {//"cambio de control2"
+    public void run() {//""
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
