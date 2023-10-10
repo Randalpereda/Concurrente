@@ -5,6 +5,9 @@
  */
 package tp4.punto8;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Randal
@@ -21,7 +24,13 @@ public class control implements Runnable{
     }
 
     @Override
-    public void run() {//""
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void run() {
+        try {
+                gestorLinea.cambiaLineas();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(control.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        //To change body of generated methods, choose Tools | Templates.
     }
 }

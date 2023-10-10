@@ -49,7 +49,7 @@ public class Producto implements Runnable {
        while(!entro){
           if(gestorLinea.entrarAlinea()){
              gestorLinea.llegaElec(this);
-             cruzando(); 
+             
              entro=true;
           }
            System.out.println(Thread.currentThread().getName() + ": no pudo entrar asi que espera");
@@ -70,7 +70,7 @@ public class Producto implements Runnable {
           if(gestorLinea.entrarAlineaM()){
                 
         gestorLinea.llegaMeca(this);
-        cruzando();
+       
              entro=true;
           }
            System.out.println(Thread.currentThread().getName() + ": no pudo entrar asi que espera");
@@ -87,9 +87,9 @@ public class Producto implements Runnable {
         
     
 
-    private void cruzando() {
+    public void cruzo()throws InterruptedException  {
         try {
-            System.out.println(Thread.currentThread().getName() + ": esta ensamblandose ");
+            System.out.println(Thread.currentThread().getName() + ": ya esta ensamblado ");
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
