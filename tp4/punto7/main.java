@@ -5,21 +5,30 @@
  */
 package tp4.punto7;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Randal
  */
 public class main {
-
+      private static int cant;
     private static Empleado[] emple;
     private static Thread[] th;
     private static Confiteria c = new Confiteria();
     private static Mozo mozo = new Mozo(c);
+    private static cocinero cocinero = new cocinero(c);
 
     public static void main(String[] args) {
+        
+        
         Thread hiloMozo = new Thread(mozo);
-
+        Thread hiloC = new Thread(cocinero);
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Cuantos empleados?");
+		cant = sc.nextInt();
         hiloMozo.start();
+        hiloC.start();
         crearEmpleados();
         crearHilos();
         empezarHilos();
@@ -27,16 +36,16 @@ public class main {
     }
 
     private static void crearEmpleados() {
-        emple = new Empleado[10];
-        for (int i = 0; i < 10; i++) {
+        emple = new Empleado[cant];
+        for (int i = 0; i < cant; i++) {
             emple[i] = new Empleado(c);
         }
     }
 
     private static void crearHilos() {
-        th = new Thread[10];
+        th = new Thread[cant];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < cant; i++) {
 
             th[i] = new Thread(emple[i], "empleado " + i);
             //th[i+1] = new Thread(productosM[i+10], "Producto " + i+10);
@@ -47,7 +56,7 @@ public class main {
     private static void empezarHilos() {
         for (int i = 0; i < th.length; i++) {
             th[i].start();
-
+            
         }
     }
 }

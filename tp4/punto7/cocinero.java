@@ -12,11 +12,11 @@ import java.util.logging.Logger;
  *
  * @author Randal
  */
-public class Mozo implements Runnable {
+public class cocinero implements Runnable {
 
     private Confiteria silla;
 
-    public Mozo(Confiteria silla) {
+    public cocinero(Confiteria silla) {
 
         this.silla = silla;
     }
@@ -25,9 +25,9 @@ public class Mozo implements Runnable {
     public void run() {
         try {
             while (true) {
-                System.out.println("....... mozo inventando pollos.......");
+                System.out.println("...... cocinero inventando o limpieando cocina......");
                 
-                silla.pideBebida();
+                silla.pideComida();
 
             }
         } catch (InterruptedException ex) {

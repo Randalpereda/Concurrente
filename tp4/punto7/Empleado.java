@@ -27,16 +27,32 @@ public class Empleado implements Runnable {
         boolean comio = false;
 
         try {
+            
             Thread.sleep((long) ((Math.random() * 20) * 1000));//llegando a la confiteria
             while (!comio) {
-
+               
                 if (silla.solicitarSilla()) {
-                    silla.llamarMozo();
-                    System.out.println(Thread.currentThread().getName() +"esta comiendo");
+                    int n=(int) (Math.random() * 3) + 1;
+                    switch (n) {
+                        case 1:
+                            silla.llamarMozo();
+                            
+                            break;
+                        case 2:
+                            silla.llamarCocinero();
+                            break;
+                        default:
+                            System.out.println("...byc");
+                            silla.llamarMozoyCocinero();
+                            break;
+                    }
+                    
+                   
+                   
                     silla.terminaEmpleado();
                     comio = true;
                 } else {
-                    System.out.println(Thread.currentThread().getName() + "silla ocupada espera");
+                    System.out.println(Thread.currentThread().getName() + " ''silla ocupada'' espera...");
                     Thread.sleep(15000);
                 }
             }
