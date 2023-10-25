@@ -9,11 +9,6 @@ package tp3Sincro;
  *
  * @author randal.pereda
  */
-public class Mozo {
-    private Silla silla;
+public class mainCafeteria {
     
-    
-    public Mozo(Silla t){
-    this.silla=t;
-    }
 }

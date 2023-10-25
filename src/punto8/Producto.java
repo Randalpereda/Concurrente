@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tp3Sincro;
+package punto8;
 
 /**
  *
  * @author randal.pereda
  */
-public class Mozo {
-    private Silla silla;
+public class Producto {
     
-    
-    public Mozo(Silla t){
-    this.silla=t;
-    }
 }
