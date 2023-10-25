@@ -43,7 +43,7 @@ import java.util.Scanner;
 	private static void crearHamsters() {
 		hamsters = new HamsterMonitor[cantHamsters];
 		for (int i = 0; i < cantHamsters; i++) {
-			hamsters[i] = new HamsterMonitor(c,r,);
+			hamsters[i] = new HamsterMonitor(c,r,"s");
 		}
 	}
 
