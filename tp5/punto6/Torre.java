@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 public class Torre {
 
     private Semaphore pista;
-    private Semaphore aterrisajes;
     private int cant;
 
     public Torre() {
