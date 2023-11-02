@@ -11,7 +11,7 @@ package tp6.punto1;
  */
 public class mainPuente {
 
-    private statissspublic static void main(String[] args) {
+   public static void main(String[] args) {
         Puente puente = new Puente();
 
         int cantAutos = 22;
