@@ -62,7 +62,8 @@ public class Olla {
             racion=5;
             System.out.println( " Cocinando piolon " + racion);
             esperarCanibal.signalAll();
-                    }catch(InterruptedException ex){ }
+                    }catch(InterruptedException ex){ 
+                    }
             
          finally {
             accesoOlla.unlock();
